@@ -1,3 +1,4 @@
+/*
 import java.io.*;
 import java.net.Socket;
 
@@ -26,3 +27,4 @@ public class Client_03 {
         socket.close();
     }
 }
+*/

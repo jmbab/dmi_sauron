@@ -1,3 +1,4 @@
+/*
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -35,7 +36,7 @@ public class Server_03 {
             System.err.println("File not found. Error: " + e);
         }
 
-        byte[] bytes = new byte[16*1024];
+        byte[] bytes = new byte[16 * 1024];
 
         int count;
         while ((count = in.read(bytes)) > 0) {
@@ -48,3 +49,4 @@ public class Server_03 {
         serverSocket.close();
     }
 }
+*/
