@@ -1,3 +1,4 @@
+/*
 package com.dmi_sauron.controllers;
 
 import com.dmi_sauron.domain.User;
@@ -18,3 +19,4 @@ public class UserController {
     public Iterable<User> list(){ return userService.list(); }
 
 }
+*/

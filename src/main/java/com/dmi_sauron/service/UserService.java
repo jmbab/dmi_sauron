@@ -1,3 +1,4 @@
+/*
 package com.dmi_sauron.service;
 
 import com.dmi_sauron.domain.User;
@@ -24,3 +25,4 @@ public class UserService {
     }
     public void save(List<User> users) { userRepository.saveAll(users); }
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.dmi_sauron.domain;
 
 import lombok.AllArgsConstructor;
@@ -15,3 +16,4 @@ public class Geo {
 
     public Geo(){}
 }
+*/

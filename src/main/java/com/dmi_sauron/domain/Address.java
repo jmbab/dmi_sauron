@@ -1,3 +1,4 @@
+/*
 package com.dmi_sauron.domain;
 
 import lombok.AllArgsConstructor;
@@ -24,3 +25,4 @@ public class Address {
     public Address(){}
 
 }
+*/

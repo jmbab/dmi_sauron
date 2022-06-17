@@ -1,10 +1,10 @@
 package com.dmi_sauron;
 
-import com.dmi_sauron.domain.User;
+/*import com.dmi_sauron.domain.User;
 import com.dmi_sauron.service.UserService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.CommandLineRunner;*/
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;

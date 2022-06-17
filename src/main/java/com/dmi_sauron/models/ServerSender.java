@@ -4,8 +4,6 @@ import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-// START SECOND
-
 public class ServerSender {
 
     private static Socket clientSocket = null;
@@ -16,7 +14,7 @@ public class ServerSender {
     private static DataOutputStream dataOutputStream = null;
     private static DataInputStream dataInputStream = null;
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         // metode der starter server (uendeligt: daemon kører i loop)
         initServerSocket();
@@ -24,6 +22,7 @@ public class ServerSender {
         // henvisning til singleton klasse for at hente command og dest variabler
         Resources resources = Resources.getInstance();
 
+        // Kører uendeligt (nødvendigt)
         while (true) {
 
             try {
@@ -88,7 +87,7 @@ public class ServerSender {
     public static void initServerSocket() {
 
         try (ServerSocket serverSocket = new ServerSocket(5000)) {
-            System.out.println("listening to port:5000");
+            System.out.println("Listening to port:5000");
             Socket clientSocket = serverSocket.accept();
             System.out.println(clientSocket + " connected.");
 

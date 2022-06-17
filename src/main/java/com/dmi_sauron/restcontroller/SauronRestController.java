@@ -1,13 +1,31 @@
-package com.dmi_sauron.controllers;
+package com.dmi_sauron.restcontroller;
 
+import com.dmi_sauron.models.NinjoServerModel;
+import com.dmi_sauron.service.NinjoService;
+import lombok.AllArgsConstructor;
 import net.minidev.json.JSONObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
-public class SauronController
-{
+@AllArgsConstructor
+public class SauronRestController {
+
+/*    // henvisning til singleton klasse for at hente command og dest variabler
+    // Problem: kan ikke få fat i Resources fra en anden package mappe
+    Resources resources = Resources.getInstance();
+    String serverList = resources.getServerList();*/
+
+    private NinjoService ninjoService;
+
+    // HTTP Get List
+    @GetMapping("/servicestatus")
+    public List<NinjoServerModel> findAll()
+    {
+        return ninjoService.findAll();
+    }
 
     @PostMapping(produces = "application/text", value = "server/{servername}")
     public ResponseEntity<String> getCommand(@PathVariable String serverName,

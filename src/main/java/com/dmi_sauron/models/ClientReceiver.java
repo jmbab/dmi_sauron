@@ -3,8 +3,6 @@ package com.dmi_sauron.models;
 import java.io.*;
 import java.net.Socket;
 
-// START FIRST
-
 public class ClientReceiver {
 
     private static Socket clientSocket = null;
@@ -37,9 +35,17 @@ public class ClientReceiver {
 
         // ArrayList jsonArrayList = new ArrayList<>();
 
-        // Loop gennem alle servere fra serverliste (med while loop? lukke forbindelse hver gang?)
-
         try {
+
+            // Loop gennem alle servere fra serverliste (med while loop? lukke forbindelse hver gang?)
+            Resources resources = Resources.getInstance();
+            String serverListString = resources.getServerList();
+            String[] serverList = serverListString.split(",");
+            for (String server: serverList) {
+                // System.out.println(server);
+                hostname = server;
+            }
+
             // Socket socket = new Socket("hostname", port number);
             clientSocket = new Socket(hostname, portnummer);
 
