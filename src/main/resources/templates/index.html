@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+
     <meta charset="UTF-8">
     <title>NINJO Servere Service Status</title>
 
@@ -34,15 +35,16 @@
 </head>
 
 <body>
-<!--<div class="container">
-    <img class="full-screen-width" src="/images/banner.jpg">
-</div>-->
+<div th:insert="fragments/header :: header"></div>
+<!--<div th:insert="fragments/menu :: menu"></div>-->
+<!--<div th:insert="fragments/jumbotron :: jumbotron"></div>-->
 <br><br>
 <div class="container">
-    <h2>NINJO Servere Service Status</h2>
+    <h2>DMI Sauron : Ninjo Servere Service Status</h2>
     <table class="table table-hover table-striped">
         <thead>
         <tr>
+            <th>Server name</th>
             <th>Uptime</th>
             <th>Diskfree</th>
         </tr>
@@ -54,6 +56,7 @@
 <br>
 <hr>
 <br>
+<div th:insert="fragments/footer :: footer"></div>
 </body>
 </html>
 

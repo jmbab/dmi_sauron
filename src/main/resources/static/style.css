@@ -1,0 +1,314 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: #333333;
+    font-family: 'Poppins', serif;
+}
+
+body{
+    padding-top: 20px;
+    background-color: #bbbbbb;
+    font-family: 'Poppins', serif;
+}
+
+.jumbotron {
+    background-image: url(images/sauron_fireeye_07_crop.gif);
+    background-size: cover;
+    padding-top: 0%;
+    height: 100%;
+    padding-bottom: 25%;
+    background-color: #000000;
+}
+
+.btn{
+    color: #333333;
+    background-color: #eeeeee;
+    border-color: #333333;
+    margin-top: 5px;
+}
+
+.btn:hover{
+    background-color: #bbbbbb;
+    border-color: #333333;
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+    background-color: #bbbbbb; !important;
+    color: #333333; !important;
+    font-family: 'Poppins', serif; !important;
+}
+
+.navbar {
+    background-color: #000000;
+    color: #FFFFFF; !important;
+    font-family: 'Poppins', serif; !important;
+}
+
+.navbar .navbar-nav .dropdown-menu {
+    background-color: #000000;
+    border-color: #000000;
+}
+
+.navbar .navbar-nav .dropdown-menu .dropdown-item {
+    color: #333333;
+}
+.navbar .navbar-nav .dropdown-menu .dropdown-item:hover,
+.navbar .navbar-nav .dropdown-menu .dropdown-item:focus,
+.navbar .navbar-nav .dropdown-menu .dropdown-item.active {
+    color: #333333;
+    background-color: #999999;
+}
+.navbar .navbar-nav .dropdown-menu .dropdown-divider {
+    border-top-color: #999999;
+}
+
+.grid {
+    border: 2px solid #999999;
+    empty-cells: show;
+    background-color: #FFFFFF;
+    color: #333333;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 3fr);
+    width: 5fr;
+    margin: 2%;
+}
+
+.simple-text h1,
+.simple-text h2,
+.simple-text h3 {
+    color: #333333;
+}
+
+.parag1 {
+    margin: 0%;
+    padding: 10%;
+    background-color: #eeeeee;
+    color: #333333;
+    text-align: left;
+}
+
+.parag2 {
+    margin: 0%;
+    padding: 10%;
+    background-color: #bbbbbb;
+    color: #333333;
+    text-align: center;
+}
+
+a{
+    color: #333333;
+}
+a:hover {
+    color: #222222;
+    background-color: #bbbbbb;
+    text-decoration: none;
+}
+
+.display-3{
+    font-size: 5em;
+}
+
+.video-container{
+    width: 100%;
+    height: auto;
+}
+
+.profileImage {
+    height: 300px;
+    width: auto;
+}
+#profileDiv {
+    margin-left: 5%;
+}
+.profilePicture {
+    height: 300px;
+    width: auto;
+}
+
+.profileBox {
+    border-color: #333333;
+    border-width: 1px;
+}
+
+.admin {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+#profileList {
+    border: #333333;
+    width: 0.5px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-upload {
+    border: 1px solid #333333;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+
+    color: #333333;
+    background-color: #eeeeee;
+    margin-top: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.custom-file-upload:hover {
+    color: #333333;
+    background-color: #bbbbbb;
+    text-decoration: none;
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.row {
+    display: -ms-flexbox; /* IE10 */
+    display: flex;
+    -ms-flex-wrap: wrap; /* IE10 */
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    -ms-flex: 25%; /* IE10 */
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Style the counter cards (den her fil skulle måske være en scss fil i stedet for en css fil) */
+main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 2fr));
+    /*grid-gap: 1fr;
+    cursor: pointer;*/
+    margin-top: 5%;
+
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.3); /* this adds the "card" effect */
+        -ms-flex: 35%; /* IE10 */
+        flex: 35%;
+        max-width: 35%;
+        padding: 0 4px;
+        text-align: left;
+        background-color: #f1f1f1;
+        h1, h2, h3, h4, h5, h6 {
+            color: #333333;
+            font-family: 'Poppins', serif;}
+
+        transition: transform 1s;
+
+            .info {
+                padding: 0 4px;
+                color: #333333;
+            }
+            .img {
+                width: 100%;
+            }
+    }
+}
+
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 1200px) {
+    .column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+/*  ----------- SOCIAL MEDIA ICONS --------------  */
+
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 55px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Social Medias --> Set a specific color for each brand */
+
+/* Facebook */
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+}
+
+.fa-linkedin {
+    background: #007bb5;
+    color: white;
+}
+
+.fa-instagram {
+    background: #125688;
+    color: white;
+}

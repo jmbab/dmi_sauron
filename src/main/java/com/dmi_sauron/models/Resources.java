@@ -22,7 +22,7 @@ public class Resources {
     private String dest;
 
     private Resources() {
-        ResourceBundle resourceBundle = ResourceBundle.getBundle("application.properties");
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
         /* This part is for required properties */
         try {
             serverList = resourceBundle.getString("ServerList");

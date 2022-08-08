@@ -3,20 +3,13 @@ package com.dmi_sauron.restcontroller;
 import com.dmi_sauron.models.NinjoServerModel;
 import com.dmi_sauron.service.NinjoService;
 import lombok.AllArgsConstructor;
-import net.minidev.json.JSONObject;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import javax.validation.Valid;
 import java.util.List;
 
 @RestController
 @AllArgsConstructor
+@RequestMapping("/servers")
 public class SauronRestController {
-
-/*    // henvisning til singleton klasse for at hente command og dest variabler
-    // Problem: kan ikke få fat i Resources fra en anden package mappe
-    Resources resources = Resources.getInstance();
-    String serverList = resources.getServerList();*/
 
     private NinjoService ninjoService;
 
@@ -27,14 +20,21 @@ public class SauronRestController {
         return ninjoService.findAll();
     }
 
-    @PostMapping(produces = "application/text", value = "server/{servername}")
-    public ResponseEntity<String> getCommand(@PathVariable String serverName,
+    // HTTP Post, fx. create
+    @PostMapping(value = "/post", consumes = "application/json")
+    public void create(@RequestBody NinjoServerModel ninjoServerModel) {
+        ninjoService.create(ninjoServerModel);
+    }
+
+
+   /* @PostMapping(produces = "application/text", value = "server/{servername}")
+    public ResponseEntity<String> getCommand(@PathVariable String servername,
                                              @Valid @RequestBody JSONObject json) throws Exception
     {
         // Save serverName, timestamp and json fil
         // (as formatted String or ArrayList of key/value objects) in model class
         // model.addServerInfo(serverName,json);
-        return ResponseEntity.ok().body(serverName);
+        return ResponseEntity.ok().body(servername);
     }
 
     @GetMapping(produces = "application/html", value = "status")
@@ -49,6 +49,6 @@ public class SauronRestController {
         // html += si.getName();
         // }
         return ResponseEntity.ok().body("Output");
-    }
+    }*/
 }
 

@@ -10,7 +10,15 @@ import java.util.List;
 @AllArgsConstructor
 public class NinjoService {
     private final NinjoServiceRepository ninjoServiceRepository;
+
     public List<NinjoServerModel> findAll() { return ninjoServiceRepository.findAll(); }
 
+    public NinjoServerModel create(NinjoServerModel ninjoServerModel)
+    {
+        return ninjoServiceRepository.save(ninjoServerModel);
+    }
 
+    public void saveAll(List<NinjoServerModel> ninjoServerModelList){
+        ninjoServiceRepository.saveAll(ninjoServerModelList);
+    }
 }
