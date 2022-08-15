@@ -46,7 +46,7 @@ public class DmiSauronApplication {
             ObjectMapper mapper = new ObjectMapper();
             TypeReference<List<NinjoServerModel>> typeReference = new TypeReference<>() {};
             // Håndterer forward slash i URL path?
-            InputStream inputStream = TypeReference.class.getResourceAsStream("src/main/resources/json_received/"+jsonFileName);
+            InputStream inputStream = TypeReference.class.getResourceAsStream("/json_received/"+jsonFileName);
             // how to read from file --> konvertere til String
             // bagefter pege på den rigtige fil i Repository
 
