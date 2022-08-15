@@ -35,10 +35,10 @@ public class NinjoServerModel {
 
     // Constructor uden ID (primary key), som er håndteret automatisk i databasen med auto-increment.
 //    public NinjoServerModel(String uptime, String diskfree) {
-    @JsonCreator
-    public NinjoServerModel(@JacksonInject String servername, @JsonProperty("uptime") String uptime, @JsonProperty("diskfree") String diskfree) {
+
+    public NinjoServerModel(String uptime, String diskfree) {
         // extra arguments if needed: String time1, String daysUp, String time2, String usersTotal, String loadAverage, String serverPath, String memoryTotal, String memoryUsed, String memoryFree
-        this.servername = servername; // burde kunne hentes fra i JSON filnavnet
+        // this.servername = servername; // burde kunne hentes fra i JSON filnavnet eller i diskfree scopet
         this.uptime = uptime;
         this.diskfree = diskfree;
 //        this.time1 = time1;

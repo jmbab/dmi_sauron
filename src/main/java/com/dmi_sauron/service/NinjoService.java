@@ -18,7 +18,7 @@ public class NinjoService {
     public NinjoServerModel findById(Long id) { return ninjoServiceRepository.findById(id).get(); }
 
     public List<NinjoServerModel> save(List<NinjoServerModel> ninjoServerModels) {
-        return ninjoServiceRepository.save(ninjoServerModels);
+        return ninjoServiceRepository.saveAll(ninjoServerModels);
     }
 
 

@@ -7,7 +7,7 @@
 
     await createNinjoService();
 
-    // const ninjoServiceAPI = 'json_received/cphninjo_01_serverinfo';
+    // const ninjoServiceAPI = 'json_received/cphninjo_01_serverinfo.json';
 
     ninjoServiceList.forEach(ninjoServiceModel => {
         ninjoServiceTableBody.innerHTML +=
@@ -25,7 +25,7 @@
 // Vis alle ninjo service / Show all ninjo services
 async function getAllNinjoServices()
 {
-    const ninjoServiceAPI = 'json_received/cphninjo_01_serverinfo';
+    const ninjoServiceAPI = 'http://localhost:9090/ninjoservermodels/list';
     return await fetch(ninjoServiceAPI)
         .then(response => {
         if (!response.ok) {
@@ -41,7 +41,7 @@ async function getAllNinjoServices()
 // opret / create service
 async function createNinjoService()
 {
-    const ninjoServiceAPI = 'json_received/cphninjo_01_serverinfo';
+    const ninjoServiceAPI = 'http://localhost:9090/ninjoservermodels/list';
     const postObject = {
         method:"POST",
         headers: {
