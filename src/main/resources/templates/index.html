@@ -14,7 +14,7 @@
     <script th:src="@{index.js}" defer></script>
     <style>
         body {
-            background-color: rgba(235, 250, 255, 0.5);
+            background-color: rgba(235, 250, 255, 0.2);
             overflow-x: hidden;
         }
         .full-screen-width {
@@ -36,8 +36,8 @@
 
 <body>
 <div th:insert="fragments/header :: header"></div>
-<!--<div th:insert="fragments/menu :: menu"></div>-->
-<!--<div th:insert="fragments/jumbotron :: jumbotron"></div>-->
+<div th:insert="fragments/menu :: menu"></div>
+<div th:insert="fragments/jumbotron :: jumbotron"></div>
 <br><br>
 <div class="container">
     <h2>DMI Sauron : Ninjo Servere Service Status</h2>

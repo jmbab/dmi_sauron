@@ -1,11 +1,13 @@
-// Asynkron proces der venter (await) til listen er læst inden den bliver vist
 
+// Asynkron proces der venter (await) til listen er læst inden den bliver vist
 (async () =>
 {
     const ninjoServiceTableBody = document.getElementById("ninjoServiceTableBody");
     const ninjoServiceList = await getAllNinjoServices();
 
     await createNinjoService();
+
+    // const ninjoServiceAPI = 'json_received/cphninjo_01_serverinfo';
 
     ninjoServiceList.forEach(ninjoServiceModel => {
         ninjoServiceTableBody.innerHTML +=
@@ -23,7 +25,7 @@
 // Vis alle ninjo service / Show all ninjo services
 async function getAllNinjoServices()
 {
-    const ninjoServiceAPI = "/*/json_received/127.0.0.1_serverinfo.json";
+    const ninjoServiceAPI = 'json_received/cphninjo_01_serverinfo';
     return await fetch(ninjoServiceAPI)
         .then(response => {
         if (!response.ok) {
@@ -39,27 +41,28 @@ async function getAllNinjoServices()
 // opret / create service
 async function createNinjoService()
 {
-    const createNinjoServiceAPI= "../json_received/localhost_serverinfo.json";
+    const ninjoServiceAPI = 'json_received/cphninjo_01_serverinfo';
     const postObject = {
         method:"POST",
         headers: {
             "Content-type": 'application/json',
+            'Accept': 'application/json'
         },
         body:JSON.stringify({
-            "servername":document.getElementById("servername").value,
+            "servername":document.getElementById("servername").value, // kunne fx hentes i JSON filnavnet?
             "uptime":document.getElementById("uptime").value,
             "diskfree":document.getElementById("diskfree").value,
         })
     }
 
-    return await fetch(createNinjoServiceAPI,postObject)
+    return await fetch(ninjoServiceAPI, postObject)
         .then(response => {
             if (!response.ok) {
                 throw new Error("HTTP error " + response.status);
             }
             return response.json();
         })
-    location.reload();
+    document.location.reload();
 }
 
 

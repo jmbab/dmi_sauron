@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
+// man uddelegerer ansvar for kommunikation til databasen
+// fra repository klassen til service klassen, som et mellemlag (separation of concerns)
 @Service
 @AllArgsConstructor
 public class NinjoService {
@@ -13,12 +15,14 @@ public class NinjoService {
 
     public List<NinjoServerModel> findAll() { return ninjoServiceRepository.findAll(); }
 
-    public NinjoServerModel create(NinjoServerModel ninjoServerModel)
-    {
-        return ninjoServiceRepository.save(ninjoServerModel);
+    public NinjoServerModel findById(Long id) { return ninjoServiceRepository.findById(id).get(); }
+
+    public List<NinjoServerModel> save(List<NinjoServerModel> ninjoServerModels) {
+        return ninjoServiceRepository.save(ninjoServerModels);
     }
 
-    public void saveAll(List<NinjoServerModel> ninjoServerModelList){
+
+/*    public void saveAll(NinjoServerModel ninjoServerModelList){
         ninjoServiceRepository.saveAll(ninjoServerModelList);
-    }
+    }*/
 }

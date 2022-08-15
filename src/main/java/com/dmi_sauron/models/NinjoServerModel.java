@@ -1,10 +1,13 @@
 package com.dmi_sauron.models;
 
+import com.fasterxml.jackson.annotation.JacksonInject;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.persistence.*;
 
-@Data
+//@Data
 @NoArgsConstructor // Der er altid brug for en tom constructor i det mindste fordi Jpa repository har brug for det.
 @AllArgsConstructor
 @Getter
@@ -14,10 +17,11 @@ public class NinjoServerModel {
 
     @Id // sammen med @GeneratedValue fortæller databasen at denne int id skal være vores primary key.
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String servername;
     private String uptime;
     private String diskfree;
+
 //    private String time1;
 //    private String daysUp;
 //    private String time2;
@@ -30,9 +34,11 @@ public class NinjoServerModel {
 //    private LocalDateTime timeReceived;
 
     // Constructor uden ID (primary key), som er håndteret automatisk i databasen med auto-increment.
-    public NinjoServerModel(String servername, String uptime, String diskfree) {
+//    public NinjoServerModel(String uptime, String diskfree) {
+    @JsonCreator
+    public NinjoServerModel(@JacksonInject String servername, @JsonProperty("uptime") String uptime, @JsonProperty("diskfree") String diskfree) {
         // extra arguments if needed: String time1, String daysUp, String time2, String usersTotal, String loadAverage, String serverPath, String memoryTotal, String memoryUsed, String memoryFree
-        this.servername = servername;
+        this.servername = servername; // burde kunne hentes fra i JSON filnavnet
         this.uptime = uptime;
         this.diskfree = diskfree;
 //        this.time1 = time1;
@@ -46,5 +52,4 @@ public class NinjoServerModel {
 //        this.memoryFree = memoryFree;
 //        this.timeReceived = timeReceived;
     }
-
 }

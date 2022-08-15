@@ -11,6 +11,7 @@ import com.dmi_sauron.models.ServerSender;
 import com.dmi_sauron.service.NinjoService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -37,13 +38,13 @@ public class DmiSauronApplication {
     @Bean
     CommandLineRunner runner(NinjoService ninjoService){
         return args -> {
-            // read JSON file and load json
+            // read JSON file and write to database
             ObjectMapper mapper = new ObjectMapper();
             TypeReference<List<NinjoServerModel>> typeReference = new TypeReference<>() {};
-            InputStream inputStream = TypeReference.class.getResourceAsStream("/json_received/127.0.0.1_serverinfo.json");
+            InputStream inputStream = TypeReference.class.getResourceAsStream("/json_received/cphninjo_01_serverinfo.json");
             try {
-                List<NinjoServerModel> ninjoServerModel = mapper.readValue(inputStream, typeReference);
-                ninjoService.saveAll(ninjoServerModel);
+                List<NinjoServerModel> ninjoServerModels = mapper.readValue(inputStream, typeReference);
+                ninjoService.findAll();
                 System.out.println("Ninjo Servers saved!");
             } catch (IOException e){
                 System.out.println("Unable to save Ninjo Servers: " + e.getMessage());

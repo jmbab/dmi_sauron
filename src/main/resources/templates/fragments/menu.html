@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<nav th:fragment="menu" class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #FFFFFF;">
+    <a class="navbar-brand" href="/"><img src="/images/dmi_logo.png" width="50px" height="auto"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/">Hovedside<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Datavisualisering</a>
+            </li>
+            <!-- 					<li class="nav-item">
+                                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                                </li> -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data Team<span class="caret"></span></a>
+                <ul class="dropdown-menu" aria-labelledby="dropdown01">
+                    <li><a class="dropdown-item" href="#">Profile 01</a></li>
+                    <li><a class="dropdown-item" href="#">Profile 02</a></li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#">Brugerguide</a>
+            </li>
+<!--
+            <li class="nav-item">
+                <a class="nav-link" href="/contactForm">Admin</a>
+            </li>
+-->
+        </ul>
+
+    </div>
+</nav>
+
+<body>

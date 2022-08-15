@@ -6,25 +6,28 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-@RestController
 @AllArgsConstructor
-@RequestMapping("/servers")
+@RestController
+@RequestMapping("/ninjoservermodels")
+//@RequestMapping("/servers")
 public class SauronRestController {
 
-    private NinjoService ninjoService;
+    private final NinjoService ninjoService;
 
     // HTTP Get List
-    @GetMapping("/servicestatus")
-    public List<NinjoServerModel> findAll()
-    {
-        return ninjoService.findAll();
-    }
+    @GetMapping("/list")
+    public List<NinjoServerModel> findAll() { return ninjoService.findAll(); }
+
+
+
+
+
 
     // HTTP Post, fx. create
-    @PostMapping(value = "/post", consumes = "application/json")
+/*    @PostMapping(value = "/post", consumes = "application/json")
     public void create(@RequestBody NinjoServerModel ninjoServerModel) {
         ninjoService.create(ninjoServerModel);
-    }
+    }*/
 
 
    /* @PostMapping(produces = "application/text", value = "server/{servername}")
