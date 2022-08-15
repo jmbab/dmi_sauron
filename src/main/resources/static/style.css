@@ -12,7 +12,7 @@ h1, h2, h3, h4, h5, h6{
 
 body{
     padding-top: 20px;
-    background-color: #bbbbbb;
+    background-color: #eeeeee;
     font-family: 'Poppins', serif;
 }
 
@@ -218,9 +218,9 @@ main {
     cursor: pointer;*/
     margin-top: 5%;
 
-    .card {
-        box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.3); /* this adds the "card" effect */
-        -ms-flex: 35%; /* IE10 */
+/*    .card {
+        box-shadow: 0 4px 8px 0 rgba(200, 200, 200, 0.3); !* this adds the "card" effect *!
+        -ms-flex: 35%; !* IE10 *!
         flex: 35%;
         max-width: 35%;
         padding: 0 4px;
@@ -239,7 +239,7 @@ main {
             .img {
                 width: 100%;
             }
-    }
+    }*/
 }
 
 
@@ -265,50 +265,4 @@ main {
     .bd-placeholder-img-lg {
         font-size: 3.5rem;
     }
-}
-
-/*  ----------- SOCIAL MEDIA ICONS --------------  */
-
-/* Style all font awesome icons */
-.fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 55px;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 50%;
-}
-
-/* Add a hover effect if you want */
-.fa:hover {
-    opacity: 0.7;
-}
-
-/* Social Medias --> Set a specific color for each brand */
-
-/* Facebook */
-.fa-facebook {
-    background: #3B5998;
-    color: white;
-}
-
-/* Twitter */
-.fa-twitter {
-    background: #55ACEE;
-    color: white;
-}
-
-.fa-youtube {
-    background: #bb0000;
-    color: white;
-}
-
-.fa-linkedin {
-    background: #007bb5;
-    color: white;
-}
-
-.fa-instagram {
-    background: #125688;
-    color: white;
 }

@@ -20,9 +20,4 @@ public class NinjoService {
     public List<NinjoServerModel> save(List<NinjoServerModel> ninjoServerModels) {
         return ninjoServiceRepository.saveAll(ninjoServerModels);
     }
-
-
-/*    public void saveAll(NinjoServerModel ninjoServerModelList){
-        ninjoServiceRepository.saveAll(ninjoServerModelList);
-    }*/
 }

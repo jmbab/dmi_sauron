@@ -5,7 +5,7 @@
     const ninjoServiceTableBody = document.getElementById("ninjoServiceTableBody");
     const ninjoServiceList = await getAllNinjoServices();
 
-    await createNinjoService();
+    // await createNinjoService();
 
     // const ninjoServiceAPI = 'json_received/cphninjo_01_serverinfo.json';
 
@@ -13,7 +13,8 @@
         ninjoServiceTableBody.innerHTML +=
             `
                 <tr>
-                    <td>${ninjoServiceModel.servername}</td>
+                    <!-- <td>${ninjoServiceModel.servername}</td>-->
+                    <td>ninjocph_01</td>
                     <td>${ninjoServiceModel.uptime}</td>
                     <td>${ninjoServiceModel.diskfree}</td>
                 </tr>
@@ -39,7 +40,7 @@ async function getAllNinjoServices()
 }
 
 // opret / create service
-async function createNinjoService()
+/*async function createNinjoService()
 {
     const ninjoServiceAPI = 'http://localhost:9090/ninjoservermodels/list';
     const postObject = {
@@ -63,6 +64,6 @@ async function createNinjoService()
             return response.json();
         })
     document.location.reload();
-}
+}*/
 
 

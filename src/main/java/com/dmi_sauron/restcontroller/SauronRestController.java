@@ -9,7 +9,6 @@ import java.util.List;
 @AllArgsConstructor
 @RestController
 @RequestMapping("/ninjoservermodels")
-//@RequestMapping("/servers")
 public class SauronRestController {
 
     private final NinjoService ninjoService;
@@ -17,10 +16,6 @@ public class SauronRestController {
     // HTTP Get List
     @GetMapping("/list")
     public List<NinjoServerModel> findAll() { return ninjoService.findAll(); }
-
-
-
-
 
 
     // HTTP Post, fx. create
