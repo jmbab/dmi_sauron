@@ -8,6 +8,7 @@ import org.springframework.boot.CommandLineRunner;*/
 import com.dmi_sauron.models.ClientReceiver;
 import com.dmi_sauron.models.NinjoServerModel;
 import com.dmi_sauron.models.ServerSender;
+import com.dmi_sauron.repositories.NinjoServiceRepository;
 import com.dmi_sauron.service.NinjoService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -37,7 +38,7 @@ public class DmiSauronApplication {
     }
 
     @Bean
-    CommandLineRunner runner(NinjoService ninjoService){
+    CommandLineRunner runner(NinjoService ninjoService, NinjoServiceRepository ninjoServiceRepository){
         return args -> {
 
             String jsonFileName = "cphninjo_01_serverinfo.json"; // i forEach loop over alle JSON filer i min json_received mappe
@@ -55,6 +56,7 @@ public class DmiSauronApplication {
                 // Deserialization (herunder) er den omvendte proces, hvor bytestrømmen (byte stream) bruges til at genskabe
                 // det faktiske Java-objekt i hukommelsen. Denne mekanisme bruges til at "persist" objektet.
                 List<NinjoServerModel> ninjoServerModels = mapper.readValue(inputStream, typeReference);
+                ninjoServiceRepository.saveAll(ninjoServerModels);
                 ninjoService.findAll();
                 System.out.println("Ninjo Servers saved!");
             } catch (IOException e){
