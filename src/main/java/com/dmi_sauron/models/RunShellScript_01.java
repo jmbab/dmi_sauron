@@ -1,4 +1,4 @@
-/*Instantier RunScript med den shell kommando og eventueller argumenter,
+/*Instantier RunScript med den shell kommando og eventuelle argumenter,
  * der skal udføres, dernæst kør scriptet ved at kalde run. */
 
 package com.dmi_sauron.models;
@@ -48,5 +48,4 @@ public class RunShellScript_01 {
         }
         finished = true;
     }
-
 }

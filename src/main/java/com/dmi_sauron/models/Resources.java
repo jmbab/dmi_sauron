@@ -59,7 +59,6 @@ public class Resources {
         return instance;
     }
 
-
     public String getServerList() { return serverList; }
     public String getScriptDir() { return scriptDir; }
     public String getLogDir() { return logDir; }
