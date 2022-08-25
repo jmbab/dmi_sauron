@@ -6,7 +6,9 @@
     const ninjoServiceList = await getAllNinjoServices();
 
     // await createNinjoService();
-
+    document.getElementById("refreshall").addEventListener("click", function() {
+        alert("Requesting status updates");
+    });
     // const ninjoServiceAPI = 'json_received/cphninjo_01_serverinfo.json';
 
     ninjoServiceList.forEach(ninjoServiceModel => {

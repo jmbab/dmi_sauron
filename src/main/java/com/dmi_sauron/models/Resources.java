@@ -3,7 +3,7 @@ package com.dmi_sauron.models;
 import java.util.MissingResourceException;
 import java.util.ResourceBundle;
 
-/* Resource-klassen er en singleton class. Det vil sige at den kun bliver instantieret
+/* Resources-klassen er en singleton class. Det vil sige at den kun bliver instantieret
 én gang (properties læses ind fra fil). Efterfølgende kan man hvor som helst i sit program
 bede om en instans og bruge indholdet.
  */

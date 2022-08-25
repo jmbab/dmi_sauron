@@ -35,6 +35,7 @@ public class ServerSender {
             dataOutputStream.write(buffer, 0, bytes);
             dataOutputStream.flush();
         }
+
 /*        fileInputStream.close();
         dataInputStream.close();
         dataOutputStream.close();

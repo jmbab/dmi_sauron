@@ -54,8 +54,7 @@ public class ClientReceiver {
 
             for (String server: serverList) {
                 // System.out.println(server);
-                hostname = server;
-                clientSocket = new Socket(hostname, portnummer);
+                clientSocket = new Socket(server, portnummer);
                 //}
 
                 /* inputStreamReader = new InputStreamReader(clientSocket.getInputStream());
@@ -90,7 +89,7 @@ public class ClientReceiver {
                 if (response == Resources.ok_send_file) {
                     System.out.println("Receiving JSON file from host: " + currenthostname);
                     // Client bestemmer filnavnet herunder
-                    receiveFile(hostname + "_serverinfo.json");
+                    receiveFile(server + "_serverinfo.json");
                 } else if (response == Resources.server_error) {
                     System.out.println("Server error.");
                 } else {

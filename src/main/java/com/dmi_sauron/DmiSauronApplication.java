@@ -1,32 +1,23 @@
 package com.dmi_sauron;
 
-/*import com.dmi_sauron.domain.User;
-import com.dmi_sauron.service.UserService;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.boot.CommandLineRunner;*/
-import com.dmi_sauron.models.ClientReceiver;
-import com.dmi_sauron.models.NinjoServerModel;
-import com.dmi_sauron.models.ServerSender;
-import com.dmi_sauron.repositories.NinjoServiceRepository;
+//import com.dmi_sauron.models.ServerSender;
+//import com.dmi_sauron.models.ClientReceiver;
 //import com.dmi_sauron.service.FindFileByExtension;
+//import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.dmi_sauron.models.NinjoServerModel;
+import com.dmi_sauron.repositories.NinjoServiceRepository;
 import com.dmi_sauron.service.NinjoService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.io.File;
-import java.net.URL;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.file.*;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 @SpringBootApplication
 public class DmiSauronApplication {
@@ -37,8 +28,7 @@ public class DmiSauronApplication {
 //        serverSender.main(null);
 //        ClientReceiver clientReceiver = new ClientReceiver();
 //        clientReceiver.main(null);
-
-        // Path path = Paths.get("/resources/json_received");
+//        Path path = Paths.get("/resources/json_received");
 
         SpringApplication.run(DmiSauronApplication.class, args);
 
@@ -48,9 +38,9 @@ public class DmiSauronApplication {
     CommandLineRunner runner(NinjoService ninjoService, NinjoServiceRepository ninjoServiceRepository) {
         return args -> {
 
-//            FindFileByExtension.findFilesByExtension();
-//            FindFileByExtension.findFiles("/json_received", "json");
-            String jsonFileName = "cphninjo_01_serverinfo.json"; // i forEach loop over alle JSON filer i min json_received mappe
+            //  FindFileByExtension.findFilesByExtension();
+            //  FindFileByExtension.findFiles("/json_received", "json");
+            String jsonFileName = "127.0.0.1_serverinfo.json"; // i forEach loop over alle JSON filer i min json_received mappe
 
             // read JSON file and write to database
             ObjectMapper mapper = new ObjectMapper();

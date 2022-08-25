@@ -17,7 +17,7 @@
             background-color: rgba(235, 250, 255, 0.2);
             overflow-x: hidden;
         }
-        .full-screen-width {
+        full-screen-width {
             position: relative;
             left: 50%;
             right: 50%;
@@ -26,10 +26,10 @@
             max-width: 100vw;
             width: 100vw;
 
-            .margin {
+/*            margin {
                 margin-left:2fr;
                 margin-right:2fr;
-            }
+            }*/
         }
     </style>
 </head>
@@ -41,6 +41,9 @@
 <br><br>
 <div class="container">
     <h2>DMI Sauron : Ninjo Servere Service Status</h2>
+    <br>
+    <button type="button" id="refreshall" class="btn btn-primary" data-toggle="button">Refresh All</button>
+    <br><br>
     <table class="table table-hover table-striped">
         <thead>
         <tr>
