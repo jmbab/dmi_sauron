@@ -41,7 +41,7 @@ public class DmiSauronApplication {
 
             //  FindFileByExtension.findFilesByExtension();
             //  FindFileByExtension.findFiles("/json_received", "json");
-            String jsonFileName = "127.0.0.1_serverinfo.json"; // i forEach loop over alle JSON filer i min json_received mappe
+            String jsonFileName = "127.0.0.1_serverinfo.json"; // iterere senere i forEach loop over alle JSON filer i min json_received mappe
 
             // read JSON file and write to database
             ObjectMapper mapper = new ObjectMapper();

@@ -44,7 +44,7 @@ public class NinjoServerModel {
 //    Constructor uden ID (primary key), som er håndteret automatisk i databasen med auto-increment.
 //    public NinjoServerModel(String uptime, String diskfree) {
 
-    public NinjoServerModel(String uptime, String diskfree, String date) {
+   /* public NinjoServerModel(String uptime, String diskfree, String date) {
         // extra arguments if needed: String time1, String daysUp, String time2, String usersTotal, String loadAverage, String serverPath, String memoryTotal, String memoryUsed, String memoryFree
         // this.servername = servername; // burde kunne hentes fra i JSON filnavnet eller i diskfree scopet
         this.uptime = uptime;
@@ -61,5 +61,5 @@ public class NinjoServerModel {
 //        this.date = LocalDateTime.now();
         this.date = date;
 
-    }
+    }*/
 }

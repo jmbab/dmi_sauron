@@ -36,23 +36,20 @@ public class ServerSender {
             dataOutputStream.flush();
         }
 
-/*        fileInputStream.close();
-        dataInputStream.close();
-        dataOutputStream.close();
-        clientSocket.close();*/
+        fileInputStream.close();
 
     }
 
     public static void main(String[] args) {
 
-        // metode der starter server (uendeligt: daemon kører i loop)
-        initServerSocket();
-
-        // henvisning til singleton klasse for at hente command og dest variabler
+        // henvisning til singleton klasse for at hente variabler: command + dest
         Resources resources = Resources.getInstance();
 
-        // Kører uendeligt (nødvendigt)
+        // Kører uendeligt (nødvendigt): serveren lytter altid efter nye anmodninger (requests)
         while (true) {
+
+            // metode der starter server (uendeligt: daemon kører i loop)
+            initServerSocket();
 
             try {
                 // First while loop used to create a new socket everytime the client accepts a connection
@@ -65,19 +62,28 @@ public class ServerSender {
 
                 if (dataInputStream == null){
                     System.out.println("Socket is null");
+                    dataInputStream.close();
+                    dataOutputStream.close();
+                    clientSocket.close();
                     System.exit(0);
                 } else {
                     System.out.println("Socket OK");
                 }
 
                 // Second while loop used to communicate back and forth
-                while (true){
+                // while (clientSocket.isConnected()){
+
+                // "magic" comment above the statement to suppress warnings about the infinite loop
+                //noinspection InfiniteLoopStatement
+                while (true) {
 
                     // vi læser direkte vores int fra klienten
                     int commandNum = dataInputStream.readInt();
+                    // static int req_file = 1 (in Resources class)
+                    System.out.println("Integer response from client: " + commandNum);
 
                     if (commandNum == Resources.req_file) {
-
+                        // static int ok_send_file = 2 (in Resources class)
                         dataOutputStream.writeInt(Resources.ok_send_file);
 
                         // Genrerer json filen gennem bash shell script. OBS: resources.getDest() erstatter ${1} i scriptet
@@ -89,14 +95,22 @@ public class ServerSender {
                         sendFile(resources.getDest() + "/" + "serverinfo.json");
 
                     } else {
+                        // static int server_error = 3 (in Resources class)
                         dataOutputStream.writeInt(Resources.server_error);
                     }
                     dataOutputStream.flush();
 
                 }
 
+            } catch (EOFException e) {
+
+                /* EOFException: End Of File Exception --> Signals that an end of file or end of stream has been reached unexpectedly during input.
+                This exception is mainly used by data input streams to signal end of stream.
+                Note that many other input operations return a special value on end of stream rather than throwing an exception.
+                */
+                System.out.println("End of file reached: " + e);
             } catch (Exception e) {
-                System.out.println("Exception abc: " + e);
+                System.out.println("Exception: " + e);
             }
         }
     }

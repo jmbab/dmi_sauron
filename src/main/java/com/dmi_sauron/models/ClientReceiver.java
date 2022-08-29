@@ -71,6 +71,7 @@ public class ClientReceiver {
 
                 // Wait for server response and read it
                 int response = dataInputStream.readInt();
+                System.out.println("Integer response from server: " + response);
 
                 // Get IP address and hostname
                 InetAddress ip = null;
@@ -107,7 +108,7 @@ public class ClientReceiver {
     }
 
     public static void main(String[] args) {
-        // Mulighed for en for each loop over host / server fra String Array (kun med hostnames, portnummer
+        // Mulighed for en for each loop over host / server fra String Array (kun med hostnames, da portnummer
         // skifter ikke) eller vector string med iterator / collection
         requestServerFile("localhost", 5000);
 

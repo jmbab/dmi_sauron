@@ -10,7 +10,6 @@
 
         alert("Requesting status updates");
     });
-    // const ninjoServiceAPI = 'json_received/cphninjo_01_serverinfo.json';
 
     ninjoServiceList.forEach(ninjoServiceModel => {
         ninjoServiceTableBody.innerHTML +=
@@ -30,6 +29,7 @@
 // Vis alle ninjo service / Show all ninjo services
 async function getAllNinjoServices()
 {
+    // Endpoint defined in controller, but it is NOT: const ninjoServiceAPI = 'json_received/cphninjo_01_serverinfo.json';
     const ninjoServiceAPI = 'http://localhost:9090/ninjoservermodels/list';
     return await fetch(ninjoServiceAPI)
         .then(response => {
@@ -37,6 +37,7 @@ async function getAllNinjoServices()
             throw new Error("HTTP error: " + response.status);
         }
         return response.json();
+        // document.location.reload();
     })
         .catch(function () {
             this.dataError = true;

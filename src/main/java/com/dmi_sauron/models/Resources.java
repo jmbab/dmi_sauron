@@ -22,6 +22,7 @@ public class Resources {
     private String dest;
 
     private Resources() {
+        // Get data from application.properties file
         ResourceBundle resourceBundle = ResourceBundle.getBundle("application");
         /* This part is for required properties */
         try {
@@ -47,7 +48,7 @@ public class Resources {
             result = bundle.getString(name);
         }
         catch (MissingResourceException e) {
-            // Do nothing as property are not required
+            // Do nothing as optional property is not required
         }
         return result;
     }
