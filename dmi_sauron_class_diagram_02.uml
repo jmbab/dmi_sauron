@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>/Users/jean/Documents/GitHub/dmi_sauron</OriginalElement>
+  <nodes>
+    <node x="412.0310550592384" y="-200.56819861743037">com.dmi_sauron.restcontroller.SauronRestController</node>
+    <node x="-254.42932450166018" y="-424.7725173431994">com.dmi_sauron.models.ClientReceiver</node>
+    <node x="-254.42932450166018" y="532.1747051949567">org.springframework.data.repository.query.QueryByExampleExecutor</node>
+    <node x="826.6088546096425" y="-575.1561897680658">com.dmi_sauron.models.RunShellScript_01</node>
+    <node x="412.0310550592384" y="877.430525716793">org.springframework.data.repository.PagingAndSortingRepository</node>
+    <node x="223.5897650539912" y="-648.9768360689684">com.dmi_sauron.models.Resources</node>
+    <node x="-254.42932450166018" y="-200.56819861743037">com.dmi_sauron.DmiSauronApplication</node>
+    <node x="-254.42932450166018" y="-648.9768360689684">com.dmi_sauron.models.ServerSender</node>
+    <node x="412.0310550592384" y="156.63612010833867">com.dmi_sauron.service.NinjoService</node>
+    <node x="826.6088546096425" y="767.430525716793">org.springframework.data.repository.CrudRepository</node>
+    <node x="412.0310550592384" y="346.8090741838941">com.dmi_sauron.repositories.NinjoServiceRepository</node>
+    <node x="826.6088546096425" y="-200.56819861743037">com.dmi_sauron.controllers.SauronHomeController</node>
+    <node x="-254.42932450166018" y="1.6361201083386732">com.dmi_sauron.models.NinjoServerModel</node>
+    <node x="412.0310550592384" y="444.9820282594495">org.springframework.data.jpa.repository.JpaRepository</node>
+    <node x="519.4692638109696" y="1039.9959414622665">org.springframework.data.repository.Repository</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.dmi_sauron.repositories.NinjoServiceRepository" target="org.springframework.data.jpa.repository.JpaRepository" relationship="INTERFACE_GENERALIZATION">
+      <point x="3.280895624134473" y="14.0" />
+      <point x="530.3119506833729" y="444.9820282594495" />
+      <point x="38.21910437586564" y="-191.5" />
+    </edge>
+    <edge source="org.springframework.data.jpa.repository.JpaRepository" target="org.springframework.data.repository.PagingAndSortingRepository" relationship="INTERFACE_GENERALIZATION">
+      <point x="20.364054023130734" y="193.21259111482243" />
+      <point x="580.8951090823691" y="854.5179686464339" />
+      <point x="581.0310550592384" y="854.5179686464339" />
+      <point x="0.0" y="-37.5" />
+    </edge>
+    <edge source="com.dmi_sauron.service.NinjoService" target="com.dmi_sauron.models.NinjoServerModel" relationship="DEPENDENCY">
+      <point x="-5.5059238434296276E-5" y="-60.00012010833868" />
+      <point x="610.031" y="-50.0" />
+      <point x="-86.929" y="-50.0" />
+      <point x="3.245016601738371E-4" y="-137.50012010833868" />
+    </edge>
+    <edge source="com.dmi_sauron.restcontroller.SauronRestController" target="com.dmi_sauron.service.NinjoService" relationship="TO_ONE">
+      <point x="76.49994494076157" y="38.0" />
+      <point x="14.999944940761566" y="-60.0" />
+    </edge>
+    <edge source="org.springframework.data.jpa.repository.JpaRepository" target="org.springframework.data.repository.query.QueryByExampleExecutor" relationship="INTERFACE_GENERALIZATION">
+      <point x="-153.4445243330112" y="-11.812862101099654" />
+      <point x="303.8008652787891" y="624.6691661583499" />
+      <point x="303.8008652787891" y="624.6747051949567" />
+      <point x="225.0" y="0.0" />
+    </edge>
+    <edge source="com.dmi_sauron.models.Resources" target="com.dmi_sauron.models.Resources" relationship="TO_ONE">
+      <point x="190.00023494600885" y="-114.67916393103155" />
+      <point x="866.0" y="-592.656" />
+      <point x="866.0" y="-592.656" />
+      <point x="190.00023494600885" y="-114.67916393103155" />
+    </edge>
+    <edge source="com.dmi_sauron.service.NinjoService" target="com.dmi_sauron.repositories.NinjoServiceRepository" relationship="TO_ONE">
+      <point x="-83.0" y="60.0" />
+      <point x="0.0" y="-14.0" />
+    </edge>
+    <edge source="org.springframework.data.repository.PagingAndSortingRepository" target="org.springframework.data.repository.CrudRepository" relationship="INTERFACE_GENERALIZATION">
+      <point x="168.0" y="0.0" />
+      <point x="787.3199548344405" y="914.930525716793" />
+      <point x="787.3199548344405" y="915.0156631076152" />
+      <point x="-143.43961221227164" y="0.08513739082218308" />
+    </edge>
+    <edge source="com.dmi_sauron.restcontroller.SauronRestController" target="com.dmi_sauron.models.NinjoServerModel" relationship="DEPENDENCY">
+      <point x="-5.5059238434296276E-5" y="38.000198617430385" />
+      <point x="548.531" y="-50.0" />
+      <point x="-86.929" y="-50.0" />
+      <point x="3.245016601738371E-4" y="-137.50012010833868" />
+    </edge>
+    <edge source="org.springframework.data.repository.CrudRepository" target="org.springframework.data.repository.Repository" relationship="INTERFACE_GENERALIZATION">
+      <point x="-140.1875029477743" y="139.11280844808107" />
+      <point x="777.4659095583061" y="1054.043334164874" />
+      <point x="777.4659095583061" y="1053.9959414622665" />
+      <point x="96.5" y="0.0" />
+    </edge>
+    <edge source="com.dmi_sauron.models.RunShellScript_01" target="com.dmi_sauron.models.Resources" relationship="TO_ONE">
+      <point x="1.4539035748839524E-4" y="-37.999810231934134" />
+      <point x="954.609" y="-627.0" />
+      <point x="866.0" y="-627.0" />
+      <point x="866.0" y="-592.656" />
+      <point x="190.00023494600885" y="-114.67916393103155" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="0.7712930327736411" showDependencies="true" x="662.7395516766744" y="-396.75650399822945" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

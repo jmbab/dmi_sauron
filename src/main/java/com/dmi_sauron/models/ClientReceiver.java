@@ -4,7 +4,6 @@ import java.io.*;
 import java.net.Socket;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
-
 public class ClientReceiver {
 
     private static Socket clientSocket = null;
@@ -106,7 +105,6 @@ public class ClientReceiver {
             e.printStackTrace();
         }
     }
-
 
     public static void main(String[] args) {
         // Mulighed for en for each loop over host / server fra String Array (kun med hostnames, portnummer

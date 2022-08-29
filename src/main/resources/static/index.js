@@ -6,7 +6,8 @@
     const ninjoServiceList = await getAllNinjoServices();
 
     // await createNinjoService();
-    document.getElementById("refreshall").addEventListener("click", function() {
+    document.getElementById("refreshall").addEventListener("click", function requestNewJson() {
+
         alert("Requesting status updates");
     });
     // const ninjoServiceAPI = 'json_received/cphninjo_01_serverinfo.json';
@@ -17,6 +18,7 @@
                 <tr>
                     <!-- <td>${ninjoServiceModel.servername}</td>-->
                     <td>ninjocph_01</td>
+                    <td>${ninjoServiceModel.date}</td>
                     <td>${ninjoServiceModel.uptime}</td>
                     <td>${ninjoServiceModel.diskfree}</td>
                 </tr>

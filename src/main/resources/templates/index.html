@@ -12,6 +12,8 @@
 
     <!-- defer får hele koden til at blive læst igennem inden fuldførelsen af denne -->
     <script th:src="@{index.js}" defer></script>
+
+    <!-- Overrides BootStrap CSS locally -->
     <style>
         body {
             background-color: rgba(235, 250, 255, 0.2);
@@ -48,6 +50,7 @@
         <thead>
         <tr>
             <th>Servername</th>
+            <th>Timestamp</th>
             <th>Uptime</th>
             <th>Diskfree</th>
         </tr>

@@ -1,0 +1,77 @@
+@startuml
+!theme spacelab
+skinparam backgroundColor white
+
+class NinjoServerModel {
+- Long id
+- String servername
+- String uptime
+- String diskfree
++ <<Create>> NinjoServerModel(String,String)
+}
+class NinjoService {
+- NinjoServiceRepository ninjoServiceRepository
++ List<NinjoServerModel> findAll()
++ NinjoServerModel findById(Long)
++ List<NinjoServerModel> save(List<NinjoServerModel>)
+}
+class SauronRestController {
+- NinjoService ninjoService
++ List<NinjoServerModel> findAll()
+}
+class ServerSender {
+- {static} Socket clientSocket
+- {static} DataOutputStream dataOutputStream
+- {static} DataInputStream dataInputStream
++ {static} void initServerSocket()
+- {static} void sendFile(String)
++ {static} void main(String[])
+}
+class Resources {
+~ {static} int req_file
+- {static} Resources instance
+- String serverList
+- String scriptDir
+- String logDir
+- String command
+- String dest
+- <<Create>> Resources()
+- String readOptionalResource(ResourceBundle,String)
++ {static} Resources getInstance()
++ String getServerList()
++ String getScriptDir()
++ String getLogDir()
++ String getCommand()
++ String getDest()
+}
+class RunShellScript_01 {
+- String[] cmdline
+- boolean finished
+- Resources props
++ <<Create>> RunShellScript_01(String,String)
++ void run()
+}
+class DmiSauronApplicationTests {
+~ void contextLoads()
+}
+interface NinjoServiceRepository {
+}
+class ClientReceiver {
+- {static} Socket clientSocket
+- {static} DataOutputStream dataOutputStream
+- {static} DataInputStream dataInputStream
+- {static} void receiveFile(String)
+- {static} void requestServerFile(String,int)
++ {static} void main(String[])
+}
+class DmiSauronApplication {
++ {static} void main(String[])
+~ CommandLineRunner runner(NinjoService,NinjoServiceRepository)
+}
+class SauronHomeController {
++ String index()
+}
+
+
+JpaRepository <|-- NinjoServiceRepository
+@enduml
